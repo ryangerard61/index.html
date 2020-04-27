@@ -1,0 +1,184 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Fonts
+font-family: 'Raleway', sans-serif;
+font-family: 'Gruppo', cursive;
+font-family: 'Arimo', sans-serif;
+
+font-family: proxima-nova, sans-serif;
+font-weight: 400;
+font-style: normal;*/
+
+h1 {font-family: 'Raleway', sans-serif;
+color:#333333;}
+h2 {font-family: 'Gruppo', cursive;
+color: #1b262c;}
+h3 {font-family: 'Arimo', sans-serif;}
+
+
+body {
+  font-family: proxima-nova, sans-serif;
+font-weight: 400;
+font-style: normal;
+color: #1b262c;
+}
+
+/* Style the header */
+.header {
+  grid-area: header;
+  background-color: #333333;
+  padding: 30px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 25px;
+  height: 200px;
+}
+/* Flex stuff */
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.flex-item, .flex-menu {
+  height: 50px;
+  background-color: #333333;
+  color: white;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.flex-item {
+  width: 100px;
+}
+
+.flex-menu {
+  width: auto;
+}
+
+/* basic styling for the li items */
+.menubar li {
+display: inline-block;
+padding: 1rem;
+cursor: pointer;
+position: relative;
+text-align: center;
+background: #bbe1fa;
+border-radius: 3px;
+}
+
+/* basic styling for a elements inside li elements */
+.menubar li a {
+color: #1b262c;
+text-decoration: none;
+display: block;
+}
+
+.menubar li:hover {
+background: #1b262c;
+}
+
+.menubar li:hover a {
+color: #bbe1fa;
+}
+
+.menubar li ul {
+display: none;
+position: absolute;
+left: 0;
+margin-top: 1rem; 
+z-index: 10; 
+}
+
+.menubar li:hover ul {
+display: block;
+}
+
+.menubar li ul li > a {
+ background-color: #bbe1fa;
+ color: #1b262c;
+}
+
+.menubar li ul li:hover a {
+color: #bbe1fa;
+}
+
+.menubar li ul li {
+padding: 0.2rem;
+width: 100%;
+}
+
+/* The grid container */
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+    'header header header header header header' 
+    'left left middle middle right right' 
+    'footer footer footer footer footer footer';
+    grid-column-gap: 10px;
+  /* grid-column-gap: 10px; - gap between the columns */
+} 
+
+.left,
+.middle,
+.right {
+  padding: 10px;
+  height: 500px;
+  color: #1b262c;
+}
+
+/* left column */
+.left {
+  grid-area: left;
+  border: 2px black;
+  text-align: center;
+
+}
+ 
+/*  middle column */
+.middle {
+  grid-area: middle;
+  color: #1b262c;
+  border: 2px;
+  text-align: center;
+  vertical-align: text-bottom;
+}
+
+/* right column */
+.right {
+  grid-area: right;
+  color: #1b262c;
+text-align: center;
+}
+
+/* Style the footer */
+.footer {
+  grid-area: footer;
+  background-color: #333333;
+  color: #bbe1fa;
+  padding: 10px;
+  text-align: center;
+  height: 200px;
+}
+
+/* three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .grid-container  {
+    grid-template-areas: 
+      'header header header header header header' 
+      'left left left left left left' 
+      'middle middle middle middle middle middle' 
+      'right right right right right right' 
+      'footer footer footer footer footer footer';
+  }
+
+  
+}
